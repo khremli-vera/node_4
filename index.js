@@ -8,11 +8,14 @@ app.use(express.json());
 
 const weaponsRouter = require('./routes/weaponsRouts');
 const pizzasRouter = require('./routes/pizzasRouts');
+const turtlesRouter = require('./routes/turtlesRouts');
 
 app.use('/', weaponsRouter);
 app.use('/:id', weaponsRouter);
 app.use('/', pizzasRouter);
 app.use('/:id', pizzasRouter);
+app.use('/', turtlesRouter);
+app.use('/:id', turtlesRouter);
 app.use('/*', function (req, res) {
     res.status(400).send("Invalid request")
 })
