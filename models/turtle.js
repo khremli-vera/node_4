@@ -9,7 +9,7 @@ module.exports = (Sequelize, sequelize) => {
       type: Sequelize.STRING
     },
     color: {
-      type: Sequelize.DATE
+      type: Sequelize.STRING
     },
     weaponId: {
       type: Sequelize.INTEGER,

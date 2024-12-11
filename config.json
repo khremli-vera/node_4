@@ -1,0 +1,8 @@
+{
+    "dbName": "node4",
+    "dbPort": 5432,
+    "dbUser": "postgres",
+    "dbPassword": "9860777vera",
+    "dbHost": "localhost",
+    "dbDialect": "postgres"
+}

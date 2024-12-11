@@ -1,24 +1,17 @@
 const Sequelize = require('sequelize');
 
 const config = require('./config.json');
+console.log(config)
 
 const db = require('./models')(Sequelize, config);
 
 // TODO: запросы к БД
 
+const express = require('express');
 
+const app = express();
 
-
-// const express = require('express');
-
-// const app = express();
-// const sequelize = new Sequelize('node4', 'postgres', '9860777vera', {
-//     host: 'localhost',
-//     dialect: 'postgres',
-// });
-// const news = require('./models/news')(Sequelize, sequelize);
-
-// app.use(express.json());
+app.use(express.json());
 
 // app.post('/api/news', async ({body}, res) => {
 //     try {
@@ -32,9 +25,9 @@ const db = require('./models')(Sequelize, config);
 
 
 
-// sequelize.sync({force: true})
-// .then(() => {
-//     console.log('connected to db');
-//     app.listen(3000, () => console.log('server started'));
-// })
-// .catch((err) => console.log('err', err))
+db.sequelize.sync({force: true})
+.then(() => {
+    console.log('connected to db');
+    app.listen(3000, () => console.log('server started'));
+})
+.catch((err) => console.log('err', err))
