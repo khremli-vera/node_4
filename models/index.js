@@ -7,8 +7,6 @@ module.exports = (Sequelize, config) => {
     host: config.dbHost,
     dialect: config.dbDialect,
   });
-  console.log(2);
-  console.log(config.dbName)
 
   const turtles = Turtle(Sequelize, sequelize);
   const weapons = Weapon(Sequelize, sequelize);
