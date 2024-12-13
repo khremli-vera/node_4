@@ -14,10 +14,6 @@ const turtlesRouter = express.Router();
 
 turtlesRouter.post('/turtles', async (req, res) => {
     const { body } = req;
-    console.log(areAllFields(body));
-    console.log(areTypesRight(body));
-
-
     try {
         if (areAllFields(body) && areTypesRight(body)) {
             console.log(2)
@@ -89,8 +85,6 @@ turtlesRouter.get('/turtles/:id', async (req, res) => {
         res.status(500).send(err);
     }
 })
-
-
 
 function areAllFields(body) {
     if (body.name && body.color && body.weaponId && body.firstFavoritePizzaId && body.secondFavoritePizzaId) {
